@@ -10,6 +10,9 @@ import {
   WebGLRenderer,
 } from "three";
 
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { VRButton } from 'three/examples/jsm/webxr/VRButton';
+
 export class Artist {
 
   private camera;
@@ -83,12 +86,15 @@ export class Artist {
     const dom = document.getElementById('container');
     dom?.appendChild(renderer.domElement);
 
+    new OrbitControls(camera, this.renderer.domElement);
+
     this.render();
   }
 
   render() {
     this.cube.rotation.x += 0.01;
     this.cube.rotation.y += 0.01;
+    this.cube.rotation.z += 0.01;
     this.renderer.render(this.scene, this.camera);
     requestAnimationFrame(() => this.render());
   }
