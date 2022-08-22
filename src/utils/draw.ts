@@ -24,7 +24,7 @@ export class Artist {
     const scene = new Scene();
     this.scene = scene;
 
-    const geometry = new BoxBufferGeometry(40, 50, 50);
+    const geometry = new BoxBufferGeometry(50, 50, 50);
     const material = new MeshLambertMaterial({
       color: 0xff00ff,
       opacity: 0.9,
@@ -92,9 +92,9 @@ export class Artist {
   }
 
   render() {
-    this.cube.rotation.x += 0.01;
-    this.cube.rotation.y += 0.01;
-    this.cube.rotation.z += 0.01;
+    // this.cube.rotation.x += 0.01;
+    // this.cube.rotation.y += 0.01;
+    // this.cube.rotation.z += 0.01;
     this.renderer.render(this.scene, this.camera);
     requestAnimationFrame(() => this.render());
   }
